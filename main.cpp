@@ -5,32 +5,32 @@ using namespace std;
 
 	int main()
 	{
+		//숫자 입력 받아서 그걸 크기 (Size)로 숫자 배열을 만들어서
+		//1부터 크기까지 초기화 하고 출력하는 프로그램을 만들어보세요.
+		
+		int Size = 0; // Size 선언
+		int* P = nullptr;
 
+		cin >> Size; // 입력 받을 Size
 
-		//heap 동적으로 int 사이즈 만들고 주소 반환
-		int* Mytexture = new int;
+		int* P= new int[Size]; // heap 배열을 Size 크기 만큼 int, 시작 번지(int*)
 
-		//포인터 변수의 주소의 heap 영역 반환
-		delete Mytexture;
-		Mytexture = nullptr
-
-
-		int Size = 100;
-		//computer memory unmanaged language -> human managed language
-		//heap 동적으로 int 100개짜리 배열 사이즈 만들고 주소 반환
-		int* MyStaticMesh = new int[Size]; 
-
-		MyStaticMesh[3] = 10;
-
-		//포인터 변수의 주소부터 할당 받은 배열 크기 만큼의 heap 영역 반환
-		//delete MyStaticMesh; 첫번째만 반환하고 나머지는 잊어버림
-		delete MyStaticMesh;
-		MyStaticMesh = nullptr;
-
-		if (MyStaticMesh)
+		for (int i = 0; i < Size; i++)
 		{
+			P[i] = i + 1;
 
 		}
+
+		for (int i = 0; i < Size; i++)
+		{
+			cout << *(P + i) << ", ";
+		}
+		cout << endl;
+
+		//heap에 있는 배열을 반환
+		delete[]P;
+		P = nullptr;
+		
 
 		return 0;
 
